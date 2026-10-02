@@ -38,8 +38,9 @@ them by on-device recognition — the image is never sent anywhere to be read.</
 <h3>1. Cloud backup and sync <span class="pill">off until you sign in</span></h3>
 <p>If you create a Hollis account, your entries are copied to our cloud database so a new
 phone can restore them. The copy is stored on Supabase infrastructure. It contains what
-you typed into Hollis and your email address. Until you sign in, no account exists and
-nothing is uploaded.</p>
+you typed into Hollis and your email address. Signing in uses a one-time code emailed to
+you — Hollis has no password to store. Until you turn backup on, nothing you typed is
+uploaded.</p>
 
 <h3>2. Ask Hollis <span class="pill">off until you use it</span></h3>
 <p>When you ask Hollis a question, your question and the entries relevant to answering it
@@ -47,6 +48,11 @@ are sent to our server, which passes them to an AI provider (Google Gemini and/o
 Anthropic) to compose the answer. The answer comes back and is shown to you. These
 providers process the request to produce the reply and do not use it to train their
 models. If you never open Ask Hollis, nothing is ever sent.</p>
+<p>Your question and its answer are not stored on our server. What <em>is</em> stored is a
+count: how many AI requests your installation has made this month, so the fair-use limit
+can be enforced. The first time you use Ask Hollis without an account, Hollis asks our
+server for an anonymous identifier — a random ID tied to nothing but that count. It is not
+your name, your email or any device identifier, and it is deleted with your data.</p>
 
 <h3>3. Voice capture <span class="pill">only while you hold the button</span></h3>
 <p>If you speak to Hollis instead of typing, Android's own speech recognition turns your
@@ -67,7 +73,9 @@ your card details — we are told only whether a subscription is active.</p>
 <h2>What Hollis never does</h2>
 <ul>
   <li>No third-party analytics or tracking SDKs.</li>
-  <li>No selling or sharing of your entries with anyone, for any purpose.</li>
+  <li>No selling of your entries, ever, to anyone.</li>
+  <li>No sharing of them either, with one exception, described above: when you use Ask
+      Hollis, what is needed to answer goes to the AI provider that composes the reply.</li>
   <li>No reading your contacts, call log, SMS, location or other apps' data.</li>
   <li>No advertising profile built from what you wrote in Hollis.</li>
 </ul>
@@ -87,13 +95,14 @@ your card details — we are told only whether a subscription is active.</p>
 
 <h2>How long things are kept</h2>
 <p>On the phone, until you delete them or uninstall the app. In the cloud, until you delete
-your account — at which point the copy is deleted. See
+your account — at which point the backup copy, your email address, your identifier and
+your usage count are all deleted. See
 <a href="delete-account.html">Delete your account</a>.</p>
 
 <h2>Your choices</h2>
 <ul>
-  <li><strong>Export everything.</strong> Settings &amp; privacy &rarr; Your data &rarr; Export all my data. A file you keep.</li>
-  <li><strong>Delete your cloud copy.</strong> Settings &amp; privacy &rarr; Account &amp; cloud backup &rarr; Delete account, or use
+  <li><strong>Export everything.</strong> Settings &amp; privacy → Your data → Export all my data. A file you keep.</li>
+  <li><strong>Delete your cloud copy.</strong> Settings &amp; privacy → Account &amp; cloud backup → Delete account, or use
       <a href="delete-account.html">the web form</a>.</li>
   <li><strong>Use Hollis with no account at all.</strong> This is the default and always will be.</li>
 </ul>
@@ -109,7 +118,7 @@ you in-app before the change takes effect.</p>
 <h2>Contact</h2>
 <p>Questions, or a request about your data: <a href="mailto:esellersstores@gmail.com">esellersstores@gmail.com</a>.</p>
 
-<p class="meta">Hollis is published by SplashStars. Last updated 1 October 2026.</p>
+<p class="meta">Hollis is published by SplashStars. Last updated 2 October 2026.</p>
 </div>
 
 </main>
